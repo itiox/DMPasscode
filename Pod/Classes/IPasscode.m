@@ -22,7 +22,7 @@
 static IPasscode* instance;
 static const NSString* KEYCHAIN_NAME = @"passcode";
 static NSBundle* bundle;
-NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
+NSString * const IUnlockErrorDomain = @"com.ipasscode.error.unlock";
 
 @interface IPasscode () <IPasscodeInternalViewControllerDelegate>
 @end
@@ -90,7 +90,7 @@ NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
     _completion = completion;
     LAContext* context = [[LAContext alloc] init];
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"IPasscode_touchid_reason", nil) reply:^(BOOL success, NSError* error) {
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"ipasscode_touchid_reason", nil) reply:^(BOOL success, NSError* error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error) {
                     switch (error.code) {
@@ -143,9 +143,9 @@ NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
     [nc setModalPresentationStyle:UIModalPresentationFormSheet];
     [viewController presentViewController:nc animated:YES completion:nil];
     if (_mode == 0) {
-        [_passcodeViewController setInstructions:NSLocalizedString(@"IPasscode_enter_new_code", nil)];
+        [_passcodeViewController setInstructions:NSLocalizedString(@"ipasscode_enter_new_code", nil)];
     } else if (_mode == 1) {
-        [_passcodeViewController setInstructions:NSLocalizedString(@"IPasscode_enter_to_unlock", nil)];
+        [_passcodeViewController setInstructions:NSLocalizedString(@"ipasscode_enter_to_unlock", nil)];
     }
 }
 
@@ -160,7 +160,7 @@ NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
     if (_mode == 0) {
         if (_count == 0) {
             _prevCode = code;
-            [_passcodeViewController setInstructions:NSLocalizedString(@"IPasscode_repeat", nil)];
+            [_passcodeViewController setInstructions:NSLocalizedString(@"ipasscode_repeat", nil)];
             [_passcodeViewController setErrorMessage:@""];
             [_passcodeViewController reset];
         } else if (_count == 1) {
@@ -168,8 +168,8 @@ NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
                 [[IKeychain defaultKeychain] setObject:code forKey:KEYCHAIN_NAME];
                 [self closeAndNotify:YES withError:nil];
             } else {
-                [_passcodeViewController setInstructions:NSLocalizedString(@"IPasscode_enter_new_code", nil)];
-                [_passcodeViewController setErrorMessage:NSLocalizedString(@"IPasscode_not_match", nil)];
+                [_passcodeViewController setInstructions:NSLocalizedString(@"ipasscode_enter_new_code", nil)];
+                [_passcodeViewController setErrorMessage:NSLocalizedString(@"ipasscode_not_match", nil)];
                 [_passcodeViewController reset];
                 _count = 0;
                 return;
@@ -180,9 +180,9 @@ NSString * const IUnlockErrorDomain = @"com.IPasscode.error.unlock";
             [self closeAndNotify:YES withError:nil];
         } else {
             if (_count == 1) {
-                [_passcodeViewController setErrorMessage:NSLocalizedString(@"IPasscode_1_left", nil)];
+                [_passcodeViewController setErrorMessage:NSLocalizedString(@"ipasscode_1_left", nil)];
             } else {
-                [_passcodeViewController setErrorMessage:[NSString stringWithFormat:NSLocalizedString(@"IPasscode_n_left", nil), 2 - _count]];
+                [_passcodeViewController setErrorMessage:[NSString stringWithFormat:NSLocalizedString(@"ipasscode_n_left", nil), 2 - _count]];
             }
             [_passcodeViewController reset];
             if (_count >= 2) { // max 3 attempts

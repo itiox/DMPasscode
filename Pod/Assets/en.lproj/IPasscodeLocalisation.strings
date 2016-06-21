@@ -1,8 +1,8 @@
-"dmpasscode_enter_new_code" = "Enter new code";
-"dmpasscode_enter_to_unlock" = "Enter code to unlock";
-"dmpasscode_repeat" = "Repeat code";
-"dmpasscode_not_match" = "Your codes did not match.\nPlease try again.";
-"dmpasscode_okay" = "Okay";
-"dmpasscode_n_left" = "%i attempts left";
-"dmpasscode_1_left" = "1 attempt left";
-"dmpasscode_touchid_reason" = "Authenticate to access locked feature.";
+"ipasscode_enter_new_code" = "Enter new code";
+"ipasscode_enter_to_unlock" = "Enter code to unlock";
+"ipasscode_repeat" = "Repeat code";
+"ipasscode_not_match" = "Your codes did not match.\nPlease try again.";
+"ipasscode_okay" = "Okay";
+"ipasscode_n_left" = "%i attempts left";
+"ipasscode_1_left" = "1 attempt left";
+"ipasscode_touchid_reason" = "Authenticate to access locked feature.";

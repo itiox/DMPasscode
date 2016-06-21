@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
-  s.resource_bundles = { 'IPasscode' => ['Pod/Assets/*.lproj'] }
+  s.resource_bundles = { 'IPasscode' => ['Pod/Assets/**/*'] }
 
   s.public_header_files = 'Pod/Classes/IPasscode.h', 'Pod/Classes/IPasscodeConfig.h'
   s.frameworks = 'UIKit', 'Security', 'LocalAuthentication'
