@@ -1,0 +1,8 @@
+"ipasscode_enter_new_code" = "Introduzca un nuevo código";
+"ipasscode_enter_to_unlock" = "Introduzca código para desbloquear";
+"ipasscode_repeat" = "Repita código";
+"ipasscode_not_match" = "Los códigos no coinciden.\nInténtelo de nuevo.";
+"ipasscode_okay" = "Vale";
+"ipasscode_n_left" = "%i intentos restantes";
+"ipasscode_1_left" = "1 intento restante";
+"ipasscode_touchid_reason" = "Autenticar para acceder a las características bloqueadas.";
