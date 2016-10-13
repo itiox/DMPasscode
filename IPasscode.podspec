@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "IPasscode"
-  s.version          = "0.9.0"
+  s.version          = "0.9.1"
   s.summary          = "Passcode screen with Touch ID support"
   s.homepage         = "https://github.com/itiox/IPasscode"
   s.license          = 'Public Domain'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/itiox/IPasscode.git", :tag => s.version.to_s }
   s.screenshot  	 = "http://46.105.26.1/uploads/passcode.png"
 
-  s.platform     = :ios, '7.1'
+  s.platform     = :ios, '8.2'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
